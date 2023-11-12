@@ -1,0 +1,405 @@
+{
+    // Program structure
+    "Program structure": {
+        "prefix": "pgm",
+        "body": [
+            " ctl-opt dftactgrp(*no) alwnull(*usrctl) option(*nodebugio:*srcstmt)",
+            " datfmt(*iso)  Copyright('${1:company name}.(C) Since ${2:year}.');",
+            "*-------------------------------------------------------------------*",
+            "* ${3:Program name}                                                 *",
+            "*-------------------------------------------------------------------*",
+            "* Seq.  Engineer                      Date                          *",
+            "* CL00  ${4:Engineer name}            ${5:day}-${6:month}-${7:year} *",
+            "*-------------------------------------------------------------------*",
+            "* Files used in the program:                                        *",
+            "*  - Input  :                                                       *",
+            "*  - Output :                                                       *",
+            "*-------------------------------------------------------------------*",
+            "* Files definition                                                  *",
+            "*-------------------------------------------------------------------*",
+            "*",
+            "*-------------------------------------------------------------------*",
+            "* Entry parms                                                       *",
+            "*-------------------------------------------------------------------*",
+            "*",
+            "*-------------------------------------------------------------------*",
+            "* Copy definitions                                                  *",
+            "*-------------------------------------------------------------------*",
+            "*",
+            "*-------------------------------------------------------------------*",
+            "* Prototypes definitions                                            *",
+            "*-------------------------------------------------------------------*",
+            "*",
+            "*-------------------------------------------------------------------*",
+            "* Data structures definitions                                       *",
+            "*-------------------------------------------------------------------*",
+            "*",
+            "*-------------------------------------------------------------------*",
+            "* Work-fields definitions                                           *",
+            "*-------------------------------------------------------------------*",
+            "* Variables",
+            "* Constants",
+            "*-------------------------------------------------------------------*",
+            "* Main module                                                       *",
+            "*-------------------------------------------------------------------*",
+            "*",
+            "*-------------------------------------------------------------------*",
+            "* Subroutines                                                       *",
+            "*-------------------------------------------------------------------*"
+            "*",
+            "*-------------------------------------------------------------------*",
+            "* Procedures                                                        *",
+            "*-------------------------------------------------------------------*"
+        ], 
+        "description": "Include program structure"
+    },
+    // Files 
+    "Files definition: PF and LF": {
+        "prefix": "dclf",
+        "body": [
+            "dcl-f ${1:name} usage(${2:useType}) keyed;"
+        ], 
+        "description": "Include physical or logical files"
+    },
+    "Files definition: Display": {
+        "prefix": "dcldsp",
+        "body": [
+            "dcl-f ${1:name} workstn sfile(crtsfl:nrr);" 
+        ], 
+        "description": "Include display file"
+    },
+    // Array
+    "Array: Normal": {
+        "prefix": "arr",
+        "body": [
+            "dcl-s ${1:name} ${2:type}(${3:value}) dim(${4:value}) perrcd(1);" 
+        ], 
+        "description": "Include array definition"
+    },
+    // Copy
+    "Copy": {
+        "prefix": "copy",
+        "body": [
+            "/copy ${1:lib}/${2:srcmbr},${3:name}" 
+        ], 
+        "description": "Include copy"
+    },
+    // Variables
+    "Variables: char, zoned, packed type": {
+        "prefix": "dcls",
+        "body": [
+            "dcl-s ${1:name} ${3:type}(${4:length}) inz(${5:*blanks});"
+        ], 
+        "description": "Include variables definition"
+    },
+    "Variables: date type": {
+        "prefix": "dcldate",
+        "body": [
+            "dcl-s ${1:name} date(*iso);"
+        ], 
+        "description": "Include date type variable"
+    },
+    "Variables timestamp type": {
+        "prefix": "dcltime",
+        "body": [
+            "dcl-s ${1:name} timestamp;"
+        ], 
+        "description": "Include timestamp type variable"
+    },
+    "Variables: constants": {
+        "prefix": "dclc",
+        "body": [
+            "dcl-c ${1:name} const(${2:value});"
+        ], 
+        "description": "Include constant variable"
+    },
+    // Data structures
+    "Data structure: Normal": {
+        "prefix": "ds",
+        "body": [
+            "dcl-ds ${1:name} len(${2:value});",
+            "  ${3:name} ${4:type}(${5:length});",
+            "end-ds;"
+        ], 
+        "description": "Include data structure definition"
+    },
+    "Data structure: Position": {
+        "prefix": "dspos",
+        "body": [
+            "dcl-ds ${1:name} len(${2:value}) qualified;",
+            "  ${3:name} ${4:type}(${5:length}) pos(${6:value});",
+            "end-ds;"
+        ], 
+        "description": "Include data structure with position"
+    },
+    "Data structure: External": {
+        "prefix": "dsext",
+        "body": [
+            "dcl-ds ${1:name} extname(${2:Object}) qualified;",
+            "  // Fields here",
+            "end-ds;"
+        ], 
+        "description": "Include data structure external"
+    },
+    "Data structure: dtaara": {
+        "prefix": "dsdtara",
+        "body": [
+            "dcl-ds ${1:name} dtaara len(${2:length});",
+            "  // Fields here",
+            "end-ds;"
+        ], 
+        "description": "Include dtaara definition"
+    },
+    "Data structure: psds": {
+        "prefix": "dspsds",
+        "body": [
+            "dcl-ds ${1:n*} psds;",
+            "  ${2:name} char(${2:length}) pos(${2:value})",
+            "end-ds;"
+        ], 
+        "description": "Include psds definition"
+    },
+    "Data structure: Indicators": {
+        "prefix": "dsind",
+        "body": [
+            "dcl-s ${1:name} pointer inz(%addr(*in));",
+            "dcl-ds ${2:dsName} based(${1:name}) qualified;",
+            "  ${3:indName}   ind pos(${4:value});",
+            "end-ds;"
+        ], 
+        "description": "Include indicators definition"
+    },
+    // Protoypes
+    "Prototypes: Entry parms": {
+        "prefix": "pi",
+        "body": [
+            "dcl-pi ${1:name};",
+            "  ${2:name} ${3:type}(${4:length});",
+            "end-pi;",
+            "dcl-pr ${1:name};"
+            "  ${2:name} ${3:type}(${4:length});",
+            "end-pi;",
+        ], 
+        "description": "Include entry parms prototypes"
+    },
+    "Prototypes: External programs": {
+        "prefix": "pr",
+        "body": [
+            "dcl-pr ${1:name} extpgm;",
+            "  ${2:name} ${3:type}(${4:length});",
+            "end-pr;"
+        ], 
+        "description": "Include prototype"
+    },
+    // Procedures
+    "Procedure": {
+        "prefix": "proc",
+        "body": [
+			"*-------------------------------------------------------------------*",
+			"* ${1:name}",
+			"*-------------------------------------------------------------------*",
+			"dcl-proc $1;",
+			"",
+			"  dcl-pi $1;",
+			"  end-pi;",
+			"  $2;",
+			"  return;",
+			"end-proc;"
+        ], 
+        "description": "Include procedure definition"
+    }, 
+    // Operation-codes 
+    "Operation codes: begsr": {
+        "prefix": "sr",
+        "body": [
+            "*-------------------------------------------------------------------*",
+			"* ${1:name}",
+			"*-------------------------------------------------------------------*",
+            "begsr ${1:name};",
+            "  //Code here",
+            "endsr;"
+        ], 
+        "description": "Include subroutine"
+    },
+    "Operation codes: if": {
+        "prefix": "if",
+        "body": [
+            "if (${1:condition});",
+            "  //Code here",
+            "endif;"
+        ], 
+        "description": "Include if"
+    },
+    "Operation codes: if-else": {
+        "prefix": "ifelse",
+        "body": [
+            "if (${1:condition});",
+            "  //Code here",
+            "else;"
+            "  //Code here",
+            "endif;"
+        ], 
+        "description": "Include if else"
+    },
+    "Operation codes: dow": {
+        "prefix": "dow",
+        "body": [
+            "dow (${1:condition});",
+            "  //Code here",
+            "enddo;"
+        ], 
+        "description": "Include do while loop"
+    },
+    "Operation codes: for": {
+        "prefix": "for",
+        "body": [ 
+            "for index = ${1:start} to ${2:end};",
+            "  //Code here",
+            "endfor;"
+        ], 
+        "description": "Include for loop"
+    },
+    "Operation codes: monitor": {
+        "prefix": "mon",
+        "body": [ 
+            "monitor;",
+            "  //Code here",
+            "on-error;",
+            "  //Code here",
+            "endmon;"
+        ], 
+        "description": "Include monitor"
+    },
+    "Operation codes: select": {
+        "prefix": "select",
+        "body": [ 
+            "select;",
+            "  when(${1:condition});",
+            "    //Code here",
+            "  other;",
+            "    //Code here",
+            "endsl;"
+        ], 
+        "description": "Include select"
+    },
+    "Operation codes: chain + found": {
+        "prefix": "chain",
+        "body": [ 
+            "chain (${1:key}) ${2:file};",
+            "if %found(${2:file});",
+            "  //Code here",
+            "endif;"
+        ], 
+        "description": "Include chain + %found"
+    },
+    "Operation codes: setll + equal": {
+        "prefix": "setlleq",
+        "body": [ 
+            "setll (${1:key}) ${2:file};",
+            "if %equal(${2:file});",
+            "  //Code here",
+            "  reade (${1:key}) ${2:file};",
+            "endif;"
+        ], 
+        "description": "Include setll + %equal"
+    },
+    "Operation codes: setll + reade": {
+        "prefix": "setllrde",
+        "body": [ 
+            "setll (${1:key}) ${2:file};",
+            "reade (${1:key}) ${2:file};",
+            "dow ${3:not} %eof(${2:file});",
+            "  //Code here",
+            "  reade (${1:key}) ${2:file};",
+            "endif;"
+        ], 
+        "description": "Include setll + reade"
+    },
+    "Operation codes: setgt + readpe": {
+        "prefix": "setgtrp",
+        "body": [ 
+            "setgt (${1:key}) ${2:file};",
+            "reape (${1:key}) ${2:file};",
+            "dow ${3:not} %eof(${2:file});",
+            "  //Code here",
+            "  reape (${1:key}) ${2:file};",
+            "endif;"
+        ], 
+        "description": "Include setll + readpe"
+    },
+    // Built functions
+    "Built-in functions: %char": {
+        "prefix": "chr",
+        "body": [ 
+            "${1:variable} = %char(${2:variable});"
+        ], 
+        "description": "Include char function"
+    },
+    "Built-in functions: %int": {
+        "prefix": "int",
+        "body": [ 
+            "${1:variable} = %int(${2:variable});"
+        ], 
+        "description": "Include int function"
+    },
+    "Built-in functions: %dec": {
+        "prefix": "dec",
+        "body": [ 
+            "${1:variable} = %dec(${2:variable}:${3:length}:${4:decimal});"
+        ], 
+        "description": "Include dec function"
+    },
+    "Built-in functions: %date": {
+        "prefix": "date",
+        "body": [ 
+            "${1:variable} = %date();"
+        ], 
+        "description": "Include date function"
+    },
+    "Built-in functions: %time": {
+        "prefix": "time",
+        "body": [ 
+            "${1:variable} = %time();"
+        ], 
+        "description": "Include time function"
+    },
+    "Built-in functions: %timestmap()": {
+        "prefix": "timestmp",
+        "body": [ 
+            "${1:variable} = %timestamp();"
+        ], 
+        "description": "Include timestamp function"
+    },
+    "Built-in functions: %substr": {
+        "prefix": "subst",
+        "body": [ 
+            "dcl-s ${1:variable} char(${2:length});",
+            "${1:variable} = %subst(${3:variable}:${4:pos}:${5:length});"
+        ], 
+        "description": "Include substring function"
+    },
+    "Built-in functions: %scan": {
+        "prefix": "scan",
+        "body": [ 
+            "dcl-s ${1:variable} zoned(4);",
+            "${1:variable} = %scan(${2:search argument}:${3:source string}:${4:start});"
+        ], 
+        "description": "Include scan function"
+    },
+    "Built-in functions: %diff": {
+        "prefix": "diff",
+        "body": [ 
+            "${1:diff} = %diff(${2:date1}:${3:date2}:${4:*days});"
+        ], 
+        "description": "Include diff function"
+    },
+    "Built-in functions: %trim": {
+        "prefix": "trim",
+        "body": [ 
+            "${1:variable} = %trim(${2:value});"
+        ], 
+        "description": "Include diff function"
+    },
+}
+
+

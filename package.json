@@ -1,0 +1,40 @@
+{
+  "name": "intellirpgle",
+  "displayName": "IntelliRPGLE",
+  "description": "RPGLE extension for RPGLE language",
+  "version": "0.0.1",
+  "publisher": "Moralescr",
+	"readme": "README.md",
+	"author": {
+		"name": "Adrián Morales Guadamúz"
+	},
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "keywords": [
+    "IBM",
+		"IBMi",
+		"PowerI",
+    "RPGLE"
+	],
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "rpg",
+        "path": "./snippets/snippets.code-snippets"
+      },
+      {
+        "language": "rpgle",
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ]
+  },
+  "repository": {
+		"type": "git",
+		"url": ""
+	},
+  "homepage": "/README.md"  
+}
