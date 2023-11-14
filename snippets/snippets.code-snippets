@@ -1,6 +1,6 @@
 {
-    // Program structure
-    "Program structure": {
+    // Program template
+    "Program template": {
         "prefix": "pgm",
         "body": [
             " ctl-opt dftactgrp(*no) alwnull(*usrctl) option(*nodebugio:*srcstmt)",
@@ -16,10 +16,6 @@
             "*  - Output :                                                       *",
             "*-------------------------------------------------------------------*",
             "* Files definition                                                  *",
-            "*-------------------------------------------------------------------*",
-            "*",
-            "*-------------------------------------------------------------------*",
-            "* Entry parms                                                       *",
             "*-------------------------------------------------------------------*",
             "*",
             "*-------------------------------------------------------------------*",
@@ -40,7 +36,11 @@
             "* Variables",
             "* Constants",
             "*-------------------------------------------------------------------*",
-            "* Main module                                                       *",
+            "* Entry parms                                                       *",
+            "*-------------------------------------------------------------------*",
+            "*",
+            "*-------------------------------------------------------------------*",
+            "* Main                                                              *",
             "*-------------------------------------------------------------------*",
             "*",
             "*-------------------------------------------------------------------*",
@@ -51,30 +51,30 @@
             "* Procedures                                                        *",
             "*-------------------------------------------------------------------*"
         ], 
-        "description": "Include program structure"
+        "description": "Create a program template"
     },
     // Files 
-    "Files definition: PF and LF": {
+    "Files definition: Physical and logical files": {
         "prefix": "dclf",
         "body": [
             "dcl-f ${1:name} usage(${2:useType}) keyed;"
         ], 
-        "description": "Include physical or logical files"
+        "description": "Declare files"
     },
-    "Files definition: Display": {
+    "Files definition: screen file": {
         "prefix": "dcldsp",
         "body": [
             "dcl-f ${1:name} workstn sfile(crtsfl:nrr);" 
         ], 
-        "description": "Include display file"
+        "description": "Declare screen files"
     },
     // Array
-    "Array: Normal": {
+    "Array": {
         "prefix": "arr",
         "body": [
             "dcl-s ${1:name} ${2:type}(${3:value}) dim(${4:value}) perrcd(1);" 
         ], 
-        "description": "Include array definition"
+        "description": "Declare array"
     },
     // Copy
     "Copy": {
@@ -82,7 +82,7 @@
         "body": [
             "/copy ${1:lib}/${2:srcmbr},${3:name}" 
         ], 
-        "description": "Include copy"
+        "description": "Declare 'copy'"
     },
     // Variables
     "Variables: char, zoned, packed type": {
@@ -90,28 +90,28 @@
         "body": [
             "dcl-s ${1:name} ${3:type}(${4:length}) inz(${5:*blanks});"
         ], 
-        "description": "Include variables definition"
+        "description": "Declare variables"
     },
     "Variables: date type": {
         "prefix": "dcldate",
         "body": [
             "dcl-s ${1:name} date(*iso);"
         ], 
-        "description": "Include date type variable"
+        "description": "Declare date type variable"
     },
     "Variables timestamp type": {
         "prefix": "dcltime",
         "body": [
             "dcl-s ${1:name} timestamp;"
         ], 
-        "description": "Include timestamp type variable"
+        "description": "Declare time type variable"
     },
     "Variables: constants": {
         "prefix": "dclc",
         "body": [
             "dcl-c ${1:name} const(${2:value});"
         ], 
-        "description": "Include constant variable"
+        "description": "Declare constant"
     },
     // Data structures
     "Data structure: Normal": {
@@ -121,7 +121,7 @@
             "  ${3:name} ${4:type}(${5:length});",
             "end-ds;"
         ], 
-        "description": "Include data structure definition"
+        "description": "Data structure definition"
     },
     "Data structure: Position": {
         "prefix": "dspos",
@@ -130,7 +130,7 @@
             "  ${3:name} ${4:type}(${5:length}) pos(${6:value});",
             "end-ds;"
         ], 
-        "description": "Include data structure with position"
+        "description": "Data structure definition (with position)"
     },
     "Data structure: External": {
         "prefix": "dsext",
@@ -139,7 +139,7 @@
             "  // Fields here",
             "end-ds;"
         ], 
-        "description": "Include data structure external"
+        "description": "Data structure definition (external)"
     },
     "Data structure: dtaara": {
         "prefix": "dsdtara",
@@ -148,7 +148,7 @@
             "  // Fields here",
             "end-ds;"
         ], 
-        "description": "Include dtaara definition"
+        "description": "*DTAARA definition"
     },
     "Data structure: psds": {
         "prefix": "dspsds",
@@ -157,7 +157,7 @@
             "  ${2:name} char(${2:length}) pos(${2:value})",
             "end-ds;"
         ], 
-        "description": "Include psds definition"
+        "description": "PSDS(Program status data structure) definition"
     },
     "Data structure: Indicators": {
         "prefix": "dsind",
@@ -167,10 +167,10 @@
             "  ${3:indName}   ind pos(${4:value});",
             "end-ds;"
         ], 
-        "description": "Include indicators definition"
+        "description": "Data structure definition (Indicators)"
     },
     // Protoypes
-    "Prototypes: Entry parms": {
+    "Prototypes: Input parms": {
         "prefix": "pi",
         "body": [
             "dcl-pi ${1:name};",
@@ -180,7 +180,7 @@
             "  ${2:name} ${3:type}(${4:length});",
             "end-pi;",
         ], 
-        "description": "Include entry parms prototypes"
+        "description": "Create protoype for input parameters"
     },
     "Prototypes: External programs": {
         "prefix": "pr",
@@ -189,7 +189,7 @@
             "  ${2:name} ${3:type}(${4:length});",
             "end-pr;"
         ], 
-        "description": "Include prototype"
+        "description": "Create protoype for external programs"
     },
     // Procedures
     "Procedure": {
@@ -206,7 +206,7 @@
 			"  return;",
 			"end-proc;"
         ], 
-        "description": "Include procedure definition"
+        "description": "Procedure definition"
     }, 
     // Operation-codes 
     "Operation codes: begsr": {
@@ -219,7 +219,7 @@
             "  //Code here",
             "endsr;"
         ], 
-        "description": "Include subroutine"
+        "description": "Subroutine definition"
     },
     "Operation codes: if": {
         "prefix": "if",
@@ -228,7 +228,7 @@
             "  //Code here",
             "endif;"
         ], 
-        "description": "Include if"
+        "description": "if"
     },
     "Operation codes: if-else": {
         "prefix": "ifelse",
@@ -239,7 +239,7 @@
             "  //Code here",
             "endif;"
         ], 
-        "description": "Include if else"
+        "description": "if-else"
     },
     "Operation codes: dow": {
         "prefix": "dow",
@@ -248,7 +248,7 @@
             "  //Code here",
             "enddo;"
         ], 
-        "description": "Include do while loop"
+        "description": "Do while"
     },
     "Operation codes: for": {
         "prefix": "for",
@@ -257,18 +257,20 @@
             "  //Code here",
             "endfor;"
         ], 
-        "description": "Include for loop"
+        "description": "for"
     },
     "Operation codes: monitor": {
         "prefix": "mon",
         "body": [ 
             "monitor;",
             "  //Code here",
+            "on-except;",
+            "  //Code here",
             "on-error;",
             "  //Code here",
             "endmon;"
         ], 
-        "description": "Include monitor"
+        "description": "It's used to prevent the program from being interrupted due to an error"
     },
     "Operation codes: select": {
         "prefix": "select",
@@ -280,7 +282,8 @@
             "    //Code here",
             "endsl;"
         ], 
-        "description": "Include select"
+        "description": "It's used to make a case statement so that only statements 
+                        satisfying the condition will be executed"
     },
     "Operation codes: chain + found": {
         "prefix": "chain",
@@ -290,7 +293,7 @@
             "  //Code here",
             "endif;"
         ], 
-        "description": "Include chain + %found"
+        "description": "Chain + %found"
     },
     "Operation codes: setll + equal": {
         "prefix": "setlleq",
@@ -301,7 +304,7 @@
             "  reade (${1:key}) ${2:file};",
             "endif;"
         ], 
-        "description": "Include setll + %equal"
+        "description": "Setll + %equal"
     },
     "Operation codes: setll + reade": {
         "prefix": "setllrde",
@@ -313,7 +316,7 @@
             "  reade (${1:key}) ${2:file};",
             "endif;"
         ], 
-        "description": "Include setll + reade"
+        "description": "Setll + reade"
     },
     "Operation codes: setgt + readpe": {
         "prefix": "setgtrp",
@@ -325,7 +328,7 @@
             "  reape (${1:key}) ${2:file};",
             "endif;"
         ], 
-        "description": "Include setll + readpe"
+        "description": "Setll + readpe"
     },
     // Built functions
     "Built-in functions: %char": {
@@ -333,42 +336,42 @@
         "body": [ 
             "${1:variable} = %char(${2:variable});"
         ], 
-        "description": "Include char function"
+        "description": "It's used to convert to character data type"
     },
     "Built-in functions: %int": {
         "prefix": "int",
         "body": [ 
             "${1:variable} = %int(${2:variable});"
         ], 
-        "description": "Include int function"
+        "description": "It's used to convert to integer data type"
     },
     "Built-in functions: %dec": {
         "prefix": "dec",
         "body": [ 
             "${1:variable} = %dec(${2:variable}:${3:length}:${4:decimal});"
         ], 
-        "description": "Include dec function"
+        "description": "It's used to convert to decimal data type"
     },
     "Built-in functions: %date": {
         "prefix": "date",
         "body": [ 
             "${1:variable} = %date();"
         ], 
-        "description": "Include date function"
+        "description": "It's used to convert data to Date type"
     },
     "Built-in functions: %time": {
         "prefix": "time",
         "body": [ 
             "${1:variable} = %time();"
         ], 
-        "description": "Include time function"
+        "description": "It's used to convert data to time type"
     },
     "Built-in functions: %timestmap()": {
         "prefix": "timestmp",
         "body": [ 
             "${1:variable} = %timestamp();"
         ], 
-        "description": "Include timestamp function"
+        "description": "It's used to convert string into timestamp data type"
     },
     "Built-in functions: %substr": {
         "prefix": "subst",
@@ -376,7 +379,7 @@
             "dcl-s ${1:variable} char(${2:length});",
             "${1:variable} = %subst(${3:variable}:${4:pos}:${5:length});"
         ], 
-        "description": "Include substring function"
+        "description": "Extracts the string from any position"
     },
     "Built-in functions: %scan": {
         "prefix": "scan",
@@ -384,21 +387,21 @@
             "dcl-s ${1:variable} zoned(4);",
             "${1:variable} = %scan(${2:search argument}:${3:source string}:${4:start});"
         ], 
-        "description": "Include scan function"
+        "description": "It's used to find the first position of the search argument in the source string"
     },
     "Built-in functions: %diff": {
         "prefix": "diff",
         "body": [ 
             "${1:diff} = %diff(${2:date1}:${3:date2}:${4:*days});"
         ], 
-        "description": "Include diff function"
+        "description": "It's used to find difference between Two Date, Time, or Timestamp Values"
     },
     "Built-in functions: %trim": {
         "prefix": "trim",
         "body": [ 
             "${1:variable} = %trim(${2:value});"
         ], 
-        "description": "Include diff function"
+        "description": "It's used to trim blank spaces from both sides of a string"
     },
 }
 
