@@ -91,7 +91,7 @@
     "Variables: char, zoned, packed type": {
         "prefix": "dcls",
         "body": [
-            "dcl-s ${1:name} ${3|char,packed,zoned|}(${4:length}) inz(${5:*blanks});"
+            "dcl-s ${1:name} ${3|char,packed,zoned,float,bindec,uns|}(${4:length}) inz(${5:*blanks});"
         ], 
         "description": "Declare variables"
     },
@@ -334,7 +334,7 @@
     },
     // Built functions
     "Built-in functions: %char()": {
-        "prefix": "chr",
+        "prefix": "char",
         "body": [ 
             "${1:variable} = %char(${2:variable});"
         ], 
@@ -346,6 +346,20 @@
             "${1:variable} = %int(${2:variable});"
         ], 
         "description": "It's used to convert to integer data type"
+    },
+    "Built-in functions: %uns()": {
+        "prefix": "uns",
+        "body": [ 
+            "${1:variable} = %uns(${2:numeric or character expression});"
+        ], 
+        "description": "It's used to convert the value of the expression to unsigned format"
+    },
+    "Built-in functions: %float()": {
+        "prefix": "float",
+        "body": [ 
+            "${1:variable} = %float(${2:numeric or character expression});"
+        ], 
+        "description": "It's used to convert the value of the expression to floating format"
     },
     "Built-in functions: %dec()": {
         "prefix": "dec",
@@ -404,6 +418,41 @@
             "${1:variable} = %trim(${2:value});"
         ], 
         "description": "It's used to trim blank spaces from both sides of a string"
+    },
+    "Built-in functions: %lower": {
+        "prefix": "lower",
+        "body": [ 
+            "${1:variable} = %lower(${2:String}:${3:Initial position}:${4:Initial position});"
+        ], 
+        "description": "It's used to convert all alphabetic characters to lowercase"
+    },
+    "Built-in functions: %upper": {
+        "prefix": "upper",
+        "body": [ 
+            "${1:variable} = %upper(${2:String}:${3:Initial position}:${4:Final position});"
+        ], 
+        "description": "It's used to convert all alphabetic characters to uppercase"
+    },
+    "Built-in functions: %split": {
+        "prefix": "split",
+        "body": [ 
+            "${1:array} = %split(${2:String)});"
+        ], 
+        "description": "It's used to return an array of substrings"
+    },
+    "Built-in functions: %len": {
+        "prefix": "len",
+        "body": [ 
+            "${1:variable} = %len(${2:Expression)});"
+        ], 
+        "description": "It's used to get or set length"
+    },
+    "Built-in functions: %charCount": {
+        "prefix": "charCount",
+        "body": [ 
+            "${1:variable} = %charCount(${2:String)});"
+        ], 
+        "description": "It's used to return the number of characters in the alphanumeric, graphic, or UCS-2 expression"
     },
 }
 
