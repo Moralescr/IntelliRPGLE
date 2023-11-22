@@ -415,9 +415,16 @@
     "Built-in functions: %trim": {
         "prefix": "trim",
         "body": [ 
-            "${1:variable} = %trim(${2:value});"
+            "${1:variable} = %trim(${2:String}:${3:Characters to trim});"
         ], 
         "description": "It's used to trim blank spaces from both sides of a string"
+    },
+    "Built-in functions: %trimr": {
+        "prefix": "trimr",
+        "body": [ 
+            "${1:variable} = %trimr(${2:String}:${3:Characters to trim});"
+        ], 
+        "description": "It's used to trim trailing spaces of a string"
     },
     "Built-in functions: %lower": {
         "prefix": "lower",
@@ -453,6 +460,13 @@
             "${1:variable} = %charCount(${2:String)});"
         ], 
         "description": "It's used to return the number of characters in the alphanumeric, graphic, or UCS-2 expression"
+    },
+    "Built-in functions: %left": {
+        "prefix": "left",
+        "body": [ 
+            "${1:variable} = %left(${2:String}:${3:Length}:${4|*natural,*stdcharsize|});"
+        ], 
+        "description": "It's used to return the leftmost characters of a string"
     },
 }
 
