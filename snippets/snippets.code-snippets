@@ -44,7 +44,7 @@
         "body": [
             "dcl-s ${1:name} ${3|char,packed,zoned,float,bindec,uns|}(${4:length}) inz(${5:*blanks});"
         ], 
-        "description": "Declare variables"
+        "description": "Declare variables (standalone field)"
     },
     "Variables: date type": {
         "prefix": "dcldate",
@@ -134,7 +134,7 @@
             "  ${2:name} ${3|char,packed,zoned|}(${4:length});",
             "end-pi;",
         ], 
-        "description": "Create protoype for input parameters"
+        "description": "Create protoype for input parameters (procedure interface)"
     },
     "Prototypes: External programs": {
         "prefix": "dclpr",
