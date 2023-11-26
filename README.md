@@ -1,19 +1,32 @@
 # intelliRPGLE README
 
-This is the README for your extension "IntelliRPGLE". After writing up a brief description, we recommend including the following sections.
-
+This is the README for your extension "IntelliRPGLE". 
 Follow this project at: https://github.com/Moralescr/IntelliRPGLE
 
-## Known Issues
+## Documentation
+ **`Supported definitions`**
+| Shortcut | Description | Shortcut | Description |
+| ------ | ------ |------|------|
+| dclf | Files definition: PF and LF files | dcldsp | Files definition: Screen file |
+| array | Array definition: char, packed, zoned | dcls | Variables: char, zoned, packed type |
+| copy | "Copy" definition | include | "Include" definition |
+| dcldate | Variables: date type | dcltime | Variables: time type |
+| dcltimestamp | Variables: timestamp type | dclc | Constant |
+| ds | Data structure: Normal subfields | dspos | Data structure: subfields with position |
+| dsext | Data structure: External file | dsdtaara | Data structure: "*DTAARA" definition |
+| dspsds | Data structure: "*PSDS" definition | dsind | Data structure: Indicators |
+| dclpi | Prototypes: Input parameters | dclpr | Prototypes: External programs |
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+ **`Supported opcodes, expressions and built in functions(BIF)`**
+| Shortcut | Description | Shortcut | Description |
+| ------ | ------ |------|------|
+| dclproc | Procedure: Structure | begsr | begsr: External programs |
+
+>  Coming soon!
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
 ### 0.1.0
-
 Initial release
 
 **Enjoy the extension**

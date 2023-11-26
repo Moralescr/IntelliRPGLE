@@ -3,22 +3,22 @@
     "Files definition: Physical and logical files": {
         "prefix": "dclf",
         "body": [
-            "dcl-f ${1:name} usage(${2:useType}) keyed;"
+            "dcl-f ${1:fileName} usage(${2:useType}) keyed;"
         ], 
         "description": "Declare files"
     },
     "Files definition: screen file": {
         "prefix": "dcldsp",
         "body": [
-            "dcl-f ${1:name} workstn sfile(crtsfl:nrr);" 
+            "dcl-f ${1:pgmName} workstn sfile(crtsfl:nrr);" 
         ], 
         "description": "Declare screen files"
     },
     // Array
-    "Array: char, packed, zoned": {
+    "Array definition: char, packed, zoned": {
         "prefix": "array",
         "body": [
-            "dcl-s ${1:name} ${2|char,zoned,packed|}(${3:length)}) dim(${4:value}) ctdata perrcd(1);" 
+            "dcl-s ${1:arrayName} ${2|char,zoned,packed|}(${3:length)}) dim(${4:length}) ctdata perrcd(1);" 
         ], 
         "description": "Declare array"
     },
@@ -53,14 +53,21 @@
         ], 
         "description": "Declare date type variable"
     },
-    "Variables timestamp type": {
+    "Variables: time type": {
         "prefix": "dcltime",
+        "body": [
+            "dcl-s ${1:name} time;"
+        ], 
+        "description": "Declare time type variable"
+    },
+    "Variables: timestamp type": {
+        "prefix": "dcltimestamp",
         "body": [
             "dcl-s ${1:name} timestamp;"
         ], 
         "description": "Declare time type variable"
     },
-    "Variables: constants": {
+    "Constant": {
         "prefix": "dclc",
         "body": [
             "dcl-c ${1:name} const(${2:value});"
@@ -124,7 +131,7 @@
         "description": "Data structure definition (Indicators)"
     },
     // Protoypes
-    "Prototypes: Input parms": {
+    "Prototypes: Input parameters": {
         "prefix": "dclpi",
         "body": [
             "dcl-pi ${1:name};",
@@ -146,7 +153,7 @@
         "description": "Create protoype for external programs"
     },
     // Procedures
-    "Procedure": {
+    "Procedure: Structure": {
         "prefix": "dclproc",
         "body": [
 			"*-------------------------------------------------------------------*",
