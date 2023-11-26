@@ -182,6 +182,13 @@
         ], 
         "description": "Subroutine definition"
     },
+    "Operation codes: clear": {
+        "prefix": "clear",
+        "body": [
+            "clear ${1|*all, *nokey|} ${2:value};"
+        ], 
+        "description": "Sets elements in a structure or a variable to their default initialization value depending on field type"
+    },
     "Operation codes: if": {
         "prefix": "if",
         "body": [
@@ -189,7 +196,7 @@
             "  ${0:// Code here}",
             "endif;"
         ], 
-        "description": "if"
+        "description": "It's used to check the condition and if it is true"
     },
     "Operation codes: if-else": {
         "prefix": "ifelse",
@@ -200,7 +207,7 @@
             "  ${0:// Code here}",
             "endif;"
         ], 
-        "description": "if-else"
+        "description": "It`s a way of specifying alternative processing if the condition on the associated If (IF) command is false."
     },
     "Operation codes: dow": {
         "prefix": "dow",
@@ -245,50 +252,26 @@
         ], 
         "description": "It's used to make a case statement so that only statements satisfying the condition will be executed"
     },
-    "Operation codes: chain + found": {
+    "Operation codes: Random retrieval from a file": {
         "prefix": "chain",
         "body": [ 
             "chain (${1:key}) ${2:file};",
-            "if %found(${2:file});",
-            "  ${0:// Code here}",
-            "endif;"
         ], 
-        "description": "Chain + %found"
+        "description": "It's used to locate a unique record (like a customer record) from a full procedural file"
     },
-    "Operation codes: setll + equal": {
-        "prefix": "setlleq",
+    "Operation codes: Set lower limit": {
+        "prefix": "setll",
         "body": [ 
             "setll (${1:key}) ${2:file};",
-            "if %equal(${2:file});",
-            "  ${0:// Code here}",
-            "  reade (${1:key}) ${2:file};",
-            "endif;"
         ], 
-        "description": "Setll + %equal"
+        "description": "sets the file pointer at the first occurrence of the record where the key field/RRN value is > or = to the factor-1 search argument value"
     },
-    "Operation codes: setll + reade": {
-        "prefix": "setllrde",
-        "body": [ 
-            "setll (${1:key}) ${2:file};",
-            "reade (${1:key}) ${2:file};",
-            "dow ${3:not} %eof(${2:file});",
-            "  ${0:// Code here}",
-            "  reade (${1:key}) ${2:file};",
-            "endif;"
-        ], 
-        "description": "Setll + reade"
-    },
-    "Operation codes: setgt + readpe": {
-        "prefix": "setgtrp",
+    "Operation codes: Set greater than": {
+        "prefix": "setgt",
         "body": [ 
             "setgt (${1:key}) ${2:file};",
-            "reape (${1:key}) ${2:file};",
-            "dow ${3:not} %eof(${2:file});",
-            "  ${0:// Code here}",
-            "  reape (${1:key}) ${2:file};",
-            "endif;"
         ], 
-        "description": "Setll + readpe"
+        "description": "Positions the file pointer at the next record which is having the key/RRN value just greater than the current key/RRN value"
     },
     // Built functions
     "Built-in functions: %char()": {
