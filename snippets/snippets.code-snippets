@@ -433,6 +433,13 @@
         ], 
         "description": "It's used to return the minimum value of its operands"
     },
+    "Built-in functions: %xlate": {
+        "prefix": "xlate",
+        "body": [ 
+            "${1:string} = %xlate(${2:From}:${3:To}:${4:Initial position});"
+        ], 
+        "description": "It's used to translates string according to the values of from, to, and initial position"
+    },
 }
 
 
