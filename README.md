@@ -17,7 +17,7 @@ Follow this project at: https://github.com/Moralescr/IntelliRPGLE
 | dspsds | Data structure: "*PSDS" definition | dsind | Data structure: Indicators |
 | dclpi | Prototypes: Input parameters | dclpr | Prototypes: External programs |
 
- **`Supported opcodes, expressions and built in functions(BIF)`**
+ **`Supported opcodes, expressions and built-in functions(BIF)`**
 | Shortcut | Description | Shortcut | Description |
 | ------ | ------ |------|------|
 | dclproc | Operation code: Procedure Interface | begsr | Operation code: Subroutine|
@@ -26,18 +26,18 @@ Follow this project at: https://github.com/Moralescr/IntelliRPGLE
 | mon | Operation code: "Monitor" | select | Operation code: "Select"  |
 | chain |Operation code: Random retrieval from a file | setll |Operation code: Set lower limit |
 | setgt | Operation code: Set greater than definition | clear | Operation code: "Clear"|
-| char | Built-in functions: %char | int | Built-in functions: %int|
-| uns | Built-in functions: %uns | float | Built-in functions: %float|
-| dec | Built-in functions: %dec | int | Built-in functions: %date|
-| date | Built-in functions: %date | time | Built-in functions: %time|
-| timestmp | Built-in functions: %timestamp | subst | Built-in functions: %subst|
-| scan | Built-in functions: %scan | diff | Built-in functions: %diff|
-| trim | Built-in functions: %trim | trimr | Built-in functions: %trimr|
-| lower | Built-in functions: %lower | upper | Built-in functions: %upper|
-| split | Built-in functions: %split | len | Built-in functions: %len|
-| charCount | Built-in functions: %charCount | left | Built-in functions: %left|
-| min | Built-in functions: %min | max | Built-in functions: %max| 
-| xlate | Built-in functions: %xlate | | |
+| char | Built-in functions: %char() | int | Built-in functions: %int()|
+| uns | Built-in functions: %uns() | float | Built-in functions: %float()|
+| dec | Built-in functions: %dec() | int | Built-in functions: %date() |
+| date | Built-in functions: %date() | time | Built-in functions: %time() |
+| timestmp | Built-in functions: %timestamp() | subst | Built-in functions: %subst() |
+| scan | Built-in functions: %scan() | diff | Built-in functions: %diff() |
+| trim | Built-in functions: %trim() | trimr | Built-in functions: %trimr() |
+| lower | Built-in functions: %lower() | upper | Built-in functions: %upper() |
+| split | Built-in functions: %split() | len | Built-in functions: %len() |
+| charCount | Built-in functions: %charCount() | left | Built-in functions: %left() |
+| min | Built-in functions: %min() | max | Built-in functions: %max() | 
+| xlate | Built-in functions: %xlate() | | |
 
 >  More snippets coming soon!
  
