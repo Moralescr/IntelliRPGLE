@@ -37,7 +37,8 @@ Follow this project at: https://github.com/Moralescr/IntelliRPGLE
 | split | Built-in functions: %split() | len | Built-in functions: %len() |
 | charCount | Built-in functions: %charCount() | left | Built-in functions: %left() |
 | min | Built-in functions: %min() | max | Built-in functions: %max() | 
-| xlate | Built-in functions: %xlate() | | |
+| xlate | Built-in functions: %xlate() | eof | Built-in functions: %eof() |
+| equal | Built-in functions: %equal() | found | Built-in functions: %found() |
 
 >  More snippets coming soon!
  

@@ -430,6 +430,33 @@
         ], 
         "description": "It's used to translates string according to the values of from, to, and initial position"
     },
+    "Built-in functions: %eof": {
+        "prefix": "eof",
+        "body": [ 
+            "if ${1|%eof,not %eof|}(${2:file});",
+            "  ${0}//Code here",
+            "endif;"
+        ], 
+        "description": "It's used to detect end-of file, beginning of file, or subfile full conditions while performing a file operation similar to resulting indicator"
+    },
+    "Built-in functions: %equal": {
+        "prefix": "equal",
+        "body": [ 
+            "if ${1|%equal,not equal|}(${2:file});",
+            "  ${0}//Code here",
+            "endif;"
+        ], 
+        "description": "It`s used to return '1' if the most recent relevant operation found an exact match; otherwise, it returns '0'"
+    }
+    "Built-in functions: %found": {
+        "prefix": "found",
+        "body": [ 
+            "if ${1|%found,not found|}(${2:file});",
+            "  ${0}//Code here",
+            "endif;"
+        ], 
+        "description": "It`s used to return '1' if the recent operation finds a relevant/matching record; yet it is not necessary that there will be exact match"
+    }
 }
 
 
