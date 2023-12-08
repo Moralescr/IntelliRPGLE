@@ -39,6 +39,8 @@ Follow this project at: https://github.com/Moralescr/IntelliRPGLE
 | min | Built-in functions: %min() | max | Built-in functions: %max() | 
 | xlate | Built-in functions: %xlate() | eof | Built-in functions: %eof() |
 | equal | Built-in functions: %equal() | found | Built-in functions: %found() |
+| check | Built-in functions: %check() | checkr | Built-in functions: %checkr() |
+| setLen | Built-in functions: Set %len() |  |  |
 
 >  More snippets coming soon!
  
