@@ -395,7 +395,7 @@
         ], 
         "description": "It's used to return the number of characters in the alphanumeric, graphic, or UCS-2 expression"
     },
-    "Built-in functions: %left": {
+    "Built-in functions: %left (IBM i 7.5)": {
         "prefix": "left",
         "body": [ 
             "${1:variable} = %left(${2:String}:${3:Length}:${4|*natural,*stdcharsize|});"
