@@ -1,3 +1,7 @@
+/* 
+    Author: Ing. Adrián Morales Guadamúz 
+    2024
+*/
 {
     // Files 
     "Files definition: Physical and logical files": {
@@ -474,7 +478,7 @@
     "Built-in functions: Set %len": {
         "prefix": "setLen",
         "body": [ 
-            " %len(${1:Expression}) = ${2: NEW length};",
+            " %len(${1:Expression}) = ${2: New length};",
         ], 
         "description": "%len can be used to set the length of a variable expression"
     }
