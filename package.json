@@ -4,19 +4,22 @@
   "description": "RPGLE extension for RPGLE language",
   "version": "0.0.1",
   "publisher": "moralescrDev",
-	"readme": "README.md",
-	"author": {
-		"name": "Adrián Morales Guadamúz"
-	},
+  "readme": "README.md",
+  "icon": "icons/logo.png",
+  "author": {
+    "name": "Adrián Morales Guadamúz",
+    "email": "Moralesguadamuz@gmail.com",
+    "url": "https://moralescr.tech/"
+  },
   "engines": {
     "vscode": "^1.84.0"
   },
   "keywords": [
     "IBM",
-		"IBMi",
-		"PowerI",
+    "IBMi",
+    "PowerI",
     "RPGLE"
-	],
+  ],
   "categories": [
     "Programming Languages"
   ],
@@ -33,8 +36,8 @@
     ]
   },
   "repository": {
-		"type": "git",
-		"url": "https://github.com/Moralescr/IntelliRPGLE.git"
-	},
-  "homepage": "https://github.com/Moralescr/IntelliRPGLE/blob/25cdaa3f99921259c8953f62782820b087482e68/README.md"  
+    "type": "git",
+    "url": "https://github.com/Moralescr/IntelliRPGLE.git"
+  },
+  "homepage": "https://github.com/Moralescr/IntelliRPGLE/blob/25cdaa3f99921259c8953f62782820b087482e68/README.md"
 }

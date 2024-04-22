@@ -1,6 +1,3 @@
-# intelliRPGLE README
-
-This is the README for your extension "IntelliRPGLE". 
 Follow this project at: https://github.com/Moralescr/IntelliRPGLE
 
 ## Documentation
