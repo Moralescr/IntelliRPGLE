@@ -1,6 +1,19 @@
 /* 
     Author: Ing. Adrián Morales Guadamúz 
+    Pura vida!
     2024
+
+    How to add snippet to that extension?
+
+    "<Snippet group>": {
+        "prefix": "<shotcut>",
+        "body": [
+            "<Code block>"
+        ],
+        "description": "<Short description>"
+    },
+
+    More info in: https: //code.visualstudio.com/docs/editor/userdefinedsnippets
 */
 {
     // Files 
@@ -8,38 +21,38 @@
         "prefix": "dclf",
         "body": [
             "dcl-f ${1:fileName} usage(${2:useType}) keyed;"
-        ], 
+        ],
         "description": "Declare files"
     },
     "Files definition: screen file": {
         "prefix": "dcldsp",
         "body": [
-            "dcl-f ${1:pgmName} workstn sfile(crtsfl:nrr);" 
-        ], 
+            "dcl-f ${1:pgmName} workstn sfile(crtsfl:nrr);"
+        ],
         "description": "Declare screen files"
     },
     // Array
     "Array definition: char, packed, zoned": {
         "prefix": "array",
         "body": [
-            "dcl-s ${1:arrayName} ${2|char,zoned,packed|}(${3:length)}) dim(${4:length}) ctdata perrcd(1);" 
-        ], 
+            "dcl-s ${1:arrayName} ${2|char,zoned,packed|}(${3:length)}) dim(${4:length}) ctdata perrcd(1);"
+        ],
         "description": "Declare array"
     },
     // Copy
     "Copy": {
         "prefix": "copy",
         "body": [
-            "/copy ${1:lib}/${2:srcmbr},${3:name}" 
-        ], 
+            "/copy ${1:lib}/${2:srcmbr},${3:name}"
+        ],
         "description": "Declare 'copy'"
     },
     // Include
     "Include": {
         "prefix": "include",
         "body": [
-            "/include ${1:lib}/${2:srcmbr},${3:name}" 
-        ], 
+            "/include ${1:lib}/${2:srcmbr},${3:name}"
+        ],
         "description": "Declare 'include'"
     },
     // Variables
@@ -47,35 +60,35 @@
         "prefix": "dcls",
         "body": [
             "dcl-s ${1:name} ${3|char,packed,zoned,float,bindec,uns|}(${4:length}) inz(${5:*blanks});"
-        ], 
+        ],
         "description": "Declare variables (standalone field)"
     },
     "Variables: date type": {
         "prefix": "dcldate",
         "body": [
             "dcl-s ${1:name} date(*iso);"
-        ], 
+        ],
         "description": "Declare date type variable"
     },
     "Variables: time type": {
         "prefix": "dcltime",
         "body": [
             "dcl-s ${1:name} time;"
-        ], 
+        ],
         "description": "Declare time type variable"
     },
     "Variables: timestamp type": {
         "prefix": "dcltimestamp",
         "body": [
             "dcl-s ${1:name} timestamp;"
-        ], 
+        ],
         "description": "Declare time type variable"
     },
     "Constant": {
         "prefix": "dclc",
         "body": [
             "dcl-c ${1:name} const(${2:value});"
-        ], 
+        ],
         "description": "Declare constant"
     },
     // Data structures
@@ -85,7 +98,7 @@
             "dcl-ds ${1:name} len(${2:length});",
             "  ${3:name} ${4|char,packed,zoned|}(${5:length});",
             "end-ds;"
-        ], 
+        ],
         "description": "Data structure definition"
     },
     "Data structure: Position": {
@@ -94,7 +107,7 @@
             "dcl-ds ${1:name} len(${2:length}) qualified;",
             "  ${3:name} ${4|char,zoned,packed|}(${5:length}) pos(${6:value});",
             "end-ds;"
-        ], 
+        ],
         "description": "Data structure definition (with position)"
     },
     "Data structure: External": {
@@ -103,7 +116,7 @@
             "dcl-ds ${1:name} extname(${2:Object}) qualified;",
             "  ${0:// Fields here}",
             "end-ds;"
-        ], 
+        ],
         "description": "Data structure definition (external)"
     },
     "Data structure: dtaara": {
@@ -112,7 +125,7 @@
             "dcl-ds ${1:name} dtaara len(${2:length});",
             "  ${0:// Fields here}",
             "end-ds;"
-        ], 
+        ],
         "description": "*DTAARA definition"
     },
     "Data structure: psds": {
@@ -121,7 +134,7 @@
             "dcl-ds ${1:n*} psds;",
             "  ${2:name} char(${2:length}) pos(${2:value})",
             "end-ds;"
-        ], 
+        ],
         "description": "PSDS(Program status data structure) definition"
     },
     "Data structure: Indicators": {
@@ -131,7 +144,7 @@
             "dcl-ds ${2:dsName} based(${1:name}) qualified;",
             "  ${3:indName} ind pos(${4:value});",
             "end-ds;"
-        ], 
+        ],
         "description": "Data structure definition (Indicators)"
     },
     // Protoypes
@@ -141,10 +154,9 @@
             "dcl-pi ${1:name};",
             "  ${2:name} ${3|char,packed,zoned|}(${4:length});",
             "end-pi;",
-            "dcl-pr ${1:name};"
-            "  ${2:name} ${3|char,packed,zoned|}(${4:length});",
+            "dcl-pr ${1:name};""  ${2:name} ${3|char,packed,zoned|}(${4:length});",
             "end-pi;",
-        ], 
+        ],
         "description": "Create protoype for input parameters (procedure interface)"
     },
     "Prototypes: External programs": {
@@ -153,44 +165,44 @@
             "dcl-pr ${1:name} extpgm;",
             "  ${2:name} ${3|char,packed,zoned|}(${4:length});",
             "end-pr;"
-        ], 
+        ],
         "description": "Create protoype for external programs"
     },
     // Procedures
     "Procedure: Structure": {
         "prefix": "dclproc",
         "body": [
-			"*-------------------------------------------------------------------*",
-			"* ${1:name}",
-			"*-------------------------------------------------------------------*",
-			"dcl-proc $1;",
-			"",
-			"  dcl-pi $1;",
-			"  end-pi;",
-			"  ${0:// Code here}",
-			"  return;",
-			"end-proc;"
-        ], 
+            "*-------------------------------------------------------------------*",
+            "* ${1:name}",
+            "*-------------------------------------------------------------------*",
+            "dcl-proc $1;",
+            "",
+            "  dcl-pi $1;",
+            "  end-pi;",
+            "  ${0:// Code here}",
+            "  return;",
+            "end-proc;"
+        ],
         "description": "Procedure definition"
-    }, 
+    },
     // Operation-codes 
     "Operation codes: begsr": {
         "prefix": "sr",
         "body": [
             "*-------------------------------------------------------------------*",
-			"* ${1:name}",
-			"*-------------------------------------------------------------------*",
+            "* ${1:name}",
+            "*-------------------------------------------------------------------*",
             "begsr ${1:name};",
             "  ${0:// Code here}",
             "endsr;"
-        ], 
+        ],
         "description": "Subroutine definition"
     },
     "Operation codes: clear": {
         "prefix": "clear",
         "body": [
             "clear ${1|*all, *nokey|} ${2:value};"
-        ], 
+        ],
         "description": "Sets elements in a structure or a variable to their default initialization value depending on field type"
     },
     "Operation codes: if": {
@@ -199,7 +211,7 @@
             "if (${1:condition});",
             "  ${0:// Code here}",
             "endif;"
-        ], 
+        ],
         "description": "It's used to check the condition and if it is true"
     },
     "Operation codes: if-else": {
@@ -207,10 +219,9 @@
         "body": [
             "if (${1:condition});",
             "  ${2:// Code here}",
-            "else;"
-            "  ${0:// Code here}",
+            "else;""  ${0:// Code here}",
             "endif;"
-        ], 
+        ],
         "description": "It`s a way of specifying alternative processing if the condition on the associated If (IF) command is false."
     },
     "Operation codes: dow": {
@@ -219,21 +230,21 @@
             "dow (${1:condition});",
             "  ${0:// Code here}",
             "enddo;"
-        ], 
+        ],
         "description": "Do while"
     },
     "Operation codes: for": {
         "prefix": "for",
-        "body": [ 
+        "body": [
             "for index = ${1:start} to ${2:end};",
             "  ${0:// Code here}",
             "endfor;"
-        ], 
+        ],
         "description": "for"
     },
     "Operation codes: monitor": {
         "prefix": "monitor",
-        "body": [ 
+        "body": [
             "monitor;",
             "  ${1:// Code here}",
             "on-except;",
@@ -241,247 +252,245 @@
             "on-error;",
             "  ${3:// Code here}",
             "endmon;"
-        ], 
+        ],
         "description": "It's used to prevent the program from being interrupted due to an error"
     },
     "Operation codes: select": {
         "prefix": "select",
-        "body": [ 
+        "body": [
             "select;",
             "  when(${1:condition});",
             "    ${2:// Code here}",
             "  other;",
             "    ${0:// Code here}",
             "endsl;"
-        ], 
+        ],
         "description": "It's used to make a case statement so that only statements satisfying the condition will be executed"
     },
     "Operation codes: Random retrieval from a file": {
         "prefix": "chain",
-        "body": [ 
+        "body": [
             "chain (${1:key}) ${2:file};",
-        ], 
+        ],
         "description": "It's used to locate a unique record (like a customer record) from a full procedural file"
     },
     "Operation codes: Set lower limit": {
         "prefix": "setll",
-        "body": [ 
+        "body": [
             "setll (${1:key}) ${2:file};",
-        ], 
+        ],
         "description": "sets the file pointer at the first occurrence of the record where the key field/RRN value is > or = to the factor-1 search argument value"
     },
     "Operation codes: Set greater than": {
         "prefix": "setgt",
-        "body": [ 
+        "body": [
             "setgt (${1:key}) ${2:file};",
-        ], 
+        ],
         "description": "Positions the file pointer at the next record which is having the key/RRN value just greater than the current key/RRN value"
     },
     // Built functions
     "Built-in functions: %char()": {
         "prefix": "char",
-        "body": [ 
+        "body": [
             "${1:variable} = %char(${2:variable});"
-        ], 
+        ],
         "description": "It's used to convert to character data type"
     },
     "Built-in functions: %int()": {
         "prefix": "int",
-        "body": [ 
+        "body": [
             "${1:variable} = %int(${2:variable});"
-        ], 
+        ],
         "description": "It's used to convert to integer data type"
     },
     "Built-in functions: %uns()": {
         "prefix": "uns",
-        "body": [ 
+        "body": [
             "${1:variable} = %uns(${2:numeric or character expression});"
-        ], 
+        ],
         "description": "It's used to convert the value of the expression to unsigned format"
     },
     "Built-in functions: %float()": {
         "prefix": "float",
-        "body": [ 
+        "body": [
             "${1:variable} = %float(${2:numeric or character expression});"
-        ], 
+        ],
         "description": "It's used to convert the value of the expression to floating format"
     },
     "Built-in functions: %dec()": {
         "prefix": "dec",
-        "body": [ 
+        "body": [
             "${1:variable} = %dec(${2:variable}:${3:length}:${4:decimal});"
-        ], 
+        ],
         "description": "It's used to convert to decimal data type"
     },
     "Built-in functions: %date()": {
         "prefix": "date",
-        "body": [ 
+        "body": [
             "${1:variable} = %date(${2:value}:${3|*iso,*mdy,*dmy,*ymd,*usa|});"
-        ], 
+        ],
         "description": "It's used to convert a character, numeric, or timestamp data to Date type"
     },
     "Built-in functions: %time()": {
         "prefix": "time",
-        "body": [ 
+        "body": [
             "${1:variable} = %time(${2:value}:${3|*iso,*hms,*usa|});"
-        ], 
+        ],
         "description": "It's used to convert a character, numeric, or timestamp data to Time type"
     },
     "Built-in functions: %timestmap()": {
         "prefix": "timestmp",
-        "body": [ 
+        "body": [
             "${1:variable} = %timestamp(${2:String value}:${3|*iso,*iso0|});"
-        ], 
+        ],
         "description": "It's used to convert string into timestamp data type"
     },
     "Built-in functions: %substr()": {
         "prefix": "subst",
-        "body": [ 
+        "body": [
             "dcl-s ${1:variable} char(${2:length});",
             "${1:variable} = %subst(${3:variable}:${4:pos}:${5:length});"
-        ], 
+        ],
         "description": "Extracts the string from any position"
     },
     "Built-in functions: %scan()": {
         "prefix": "scan",
-        "body": [ 
+        "body": [
             "dcl-s ${1:variable} zoned(4);",
             "${1:variable} = %scan(${2:search argument}:${3:source string}:${4:start});"
-        ], 
+        ],
         "description": "It's used to find the first position of the search argument in the source string"
     },
     "Built-in functions: %diff()": {
         "prefix": "diff",
-        "body": [ 
+        "body": [
             "${1:diff} = %diff(${2:value1}:${3:value2}:${4|*MS,*S,*MN,*H,*D,*M,*Y|});"
-        ], 
+        ],
         "description": "It's used to find difference between Two Date, Time, or Timestamp Values"
     },
     "Built-in functions: %trim": {
         "prefix": "trim",
-        "body": [ 
+        "body": [
             "${1:variable} = %trim(${2:String}:${3:Characters to trim});"
-        ], 
+        ],
         "description": "It's used to trim blank spaces from both sides of a string"
     },
     "Built-in functions: %trimr": {
         "prefix": "trimr",
-        "body": [ 
+        "body": [
             "${1:variable} = %trimr(${2:String}:${3:Characters to trim});"
-        ], 
+        ],
         "description": "It's used to trim trailing spaces of a string"
     },
     "Built-in functions: %lower": {
         "prefix": "lower",
-        "body": [ 
+        "body": [
             "${1:variable} = %lower(${2:String}:${3:Initial position}:${4:Initial position});"
-        ], 
+        ],
         "description": "It's used to convert all alphabetic characters to lowercase"
     },
     "Built-in functions: %upper": {
         "prefix": "upper",
-        "body": [ 
+        "body": [
             "${1:variable} = %upper(${2:String}:${3:Initial position}:${4:Final position});"
-        ], 
+        ],
         "description": "It's used to convert all alphabetic characters to uppercase"
     },
     "Built-in functions: %split": {
         "prefix": "split",
-        "body": [ 
+        "body": [
             "${1:array} = %split(${2:String)});"
-        ], 
+        ],
         "description": "It's used to return an array of substrings"
     },
     "Built-in functions: %charCount": {
         "prefix": "charCount",
-        "body": [ 
+        "body": [
             "${1:variable} = %charCount(${2:String)});"
-        ], 
+        ],
         "description": "It's used to return the number of characters in the alphanumeric, graphic, or UCS-2 expression"
     },
     "Built-in functions: %left (IBM i 7.5)": {
         "prefix": "left",
-        "body": [ 
+        "body": [
             "${1:variable} = %left(${2:String}:${3:Length}:${4|*natural,*stdcharsize|});"
-        ], 
+        ],
         "description": "It's used to return the leftmost characters of a string"
     },
     "Built-in functions: %min": {
         "prefix": "min",
-        "body": [ 
+        "body": [
             "${1:size} = %min(${2:item1}:${3:item2}:${4:item3...});"
-        ], 
+        ],
         "description": "It's used to return the maximum value of its operands"
     },
     "Built-in functions: %max": {
         "prefix": "max",
-        "body": [ 
+        "body": [
             "${1:size} = %max(${2:item1}:${3:item2}:${4:item3...});"
-        ], 
+        ],
         "description": "It's used to return the minimum value of its operands"
     },
     "Built-in functions: %xlate": {
         "prefix": "xlate",
-        "body": [ 
+        "body": [
             "${1:string} = %xlate(${2:From}:${3:To}:${4:Initial position});"
-        ], 
+        ],
         "description": "It's used to translates string according to the values of from, to, and initial position"
     },
     "Built-in functions: %eof": {
         "prefix": "eof",
-        "body": [ 
+        "body": [
             "if ${1|%eof,not %eof|}(${2:file});",
             "  ${0}//Code here",
             "endif;"
-        ], 
+        ],
         "description": "It's used to detect end-of file, beginning of file, or subfile full conditions while performing a file operation similar to resulting indicator"
     },
     "Built-in functions: %equal": {
         "prefix": "equal",
-        "body": [ 
+        "body": [
             "if ${1|%equal,not equal|}(${2:file});",
             "  ${0}//Code here",
             "endif;"
-        ], 
+        ],
         "description": "It`s used to return '1' if the most recent relevant operation found an exact match; otherwise, it returns '0'"
     }
     "Built-in functions: %found": {
         "prefix": "found",
-        "body": [ 
+        "body": [
             "if ${1|%found,not found|}(${2:file});",
             "  ${0}//Code here",
             "endif;"
-        ], 
+        ],
         "description": "It`s used to return '1' if the recent operation finds a relevant/matching record; yet it is not necessary that there will be exact match"
     }
     "Built-in functions: %check": {
         "prefix": "check",
-        "body": [ 
+        "body": [
             "${1:Position} = %check(${2:Comparator}:${3:Base string}: ${4:Start position});",
-        ], 
+        ],
         "description": "It`s used to find and return the position for non-occurrence of a character in a string from left"
     }
     "Built-in functions: %checkr": {
         "prefix": "checkr",
-        "body": [ 
+        "body": [
             "${1:Position} = %checkr(${2:Comparator}:${3:Base string}: ${4:Start position});",
-        ], 
+        ],
         "description": "It`s used to find and return the position for non-occurrence of a character in a string from right"
     }
     "Built-in functions: Get %len": {
         "prefix": "len",
-        "body": [ 
+        "body": [
             "${1:Lenght} = %len(${2:Expression}:${3:*MAX(Optional)});",
-        ], 
+        ],
         "description": "%len can be used to get the length of a variable expression or to get the maximum length of a varying-length expression"
     }
     "Built-in functions: Set %len": {
         "prefix": "setLen",
-        "body": [ 
+        "body": [
             " %len(${1:Expression}) = ${2: New length};",
-        ], 
+        ],
         "description": "%len can be used to set the length of a variable expression"
     }
 }
-
-

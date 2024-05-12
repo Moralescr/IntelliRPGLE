@@ -43,7 +43,7 @@ Follow this project at: https://github.com/Moralescr/IntelliRPGLE
  
 ## Release Notes
 
-### 0.1.0
+### 1.0.0
 Initial release
 
 **Enjoy the extension**
