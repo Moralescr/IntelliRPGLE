@@ -132,7 +132,7 @@
         "prefix": "dspsds",
         "body": [
             "dcl-ds ${1:n*} psds;",
-            "  ${2:name} char(${2:length}) pos(${2:value})",
+            "  ${2:name} char(${3:length}) pos(${4:value})",
             "end-ds;"
         ],
         "description": "PSDS(Program status data structure) definition"
@@ -399,7 +399,7 @@
     "Built-in functions: %split": {
         "prefix": "split",
         "body": [
-            "${1:array} = %split(${2:String)});"
+            "${1:array} = %split(${2:String});"
         ],
         "description": "It's used to return an array of substrings"
     },
