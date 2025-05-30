@@ -1,7 +1,8 @@
 Follow this project at: https://github.com/Moralescr/IntelliRPGLE
 
 ## Documentation
- **`Supported definitions`**
+
+**`Supported definitions`**
 | Shortcut | Description | Shortcut | Description |
 | ------ | ------ |------|------|
 | dclf | Files definition: PF and LF files | dcldsp | Files definition: Screen file |
@@ -14,13 +15,13 @@ Follow this project at: https://github.com/Moralescr/IntelliRPGLE
 | dspsds | Data structure: "*PSDS" definition | dsind | Data structure: Indicators |
 | dclpi | Prototypes: Input parameters | dclpr | Prototypes: External programs |
 
- **`Supported opcodes, expressions and built-in functions(BIF)`**
+**`Supported opcodes, expressions and built-in functions(BIF)`**
 | Shortcut | Description | Shortcut | Description |
 | ------ | ------ |------|------|
 | dclproc | Operation code: Procedure Interface | begsr | Operation code: Subroutine|
 | if | Operation code: "If" | ifelse | Operation code: "If-Else" |
-| dow | Operation code: "Do while" | for | Operation code: "For"  |
-| mon | Operation code: "Monitor" | select | Operation code: "Select"  |
+| dow | Operation code: "Do while" | for | Operation code: "For" |
+| mon | Operation code: "Monitor" | select | Operation code: "Select" |
 | chain |Operation code: Random retrieval from a file | setll |Operation code: Set lower limit |
 | setgt | Operation code: Set greater than definition | clear | Operation code: "Clear"|
 | char | Built-in functions: %char() | int | Built-in functions: %int()|
@@ -33,17 +34,18 @@ Follow this project at: https://github.com/Moralescr/IntelliRPGLE
 | lower | Built-in functions: %lower() | upper | Built-in functions: %upper() |
 | split | Built-in functions: %split() | len | Built-in functions: %len() |
 | charCount | Built-in functions: %charCount() | left | Built-in functions: %left() |
-| min | Built-in functions: %min() | max | Built-in functions: %max() | 
+| min | Built-in functions: %min() | max | Built-in functions: %max() |
 | xlate | Built-in functions: %xlate() | eof | Built-in functions: %eof() |
 | equal | Built-in functions: %equal() | found | Built-in functions: %found() |
 | check | Built-in functions: %check() | checkr | Built-in functions: %checkr() |
-| setLen | Built-in functions: Set %len() |  |  |
+| setLen | Built-in functions: Set %len() | | |
 
->  More snippets coming soon!
- 
+> More snippets coming soon!
+
 ## Release Notes
 
-### 1.0.0
+### 0.1.0
+
 Initial release
 
 **Enjoy the extension**

@@ -1,7 +1,7 @@
 /* 
     Author: Ing. Adrián Morales Guadamúz 
     Pura vida!
-    2024
+    2025
 
     How to add snippet to that extension?
 
@@ -153,9 +153,7 @@
         "body": [
             "dcl-pi ${1:name};",
             "  ${2:name} ${3|char,packed,zoned|}(${4:length});",
-            "end-pi;",
-            "dcl-pr ${1:name};""  ${2:name} ${3|char,packed,zoned|}(${4:length});",
-            "end-pi;",
+            "end-pi;"
         ],
         "description": "Create protoype for input parameters (procedure interface)"
     },

@@ -2,7 +2,7 @@
   "name": "intellirpgle",
   "displayName": "IntelliRPGLE",
   "description": "RPGLE extension for RPGLE language",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "publisher": "moralescrDev",
   "readme": "README.md",
   "icon": "icons/logo.png",
