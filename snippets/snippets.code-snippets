@@ -217,7 +217,8 @@
         "body": [
             "if (${1:condition});",
             "  ${2:// Code here}",
-            "else;""  ${0:// Code here}",
+            "else;",
+            "  ${3:// Code here}",
             "endif;"
         ],
         "description": "It`s a way of specifying alternative processing if the condition on the associated If (IF) command is false."
@@ -453,7 +454,7 @@
             "endif;"
         ],
         "description": "It`s used to return '1' if the most recent relevant operation found an exact match; otherwise, it returns '0'"
-    }
+    },
     "Built-in functions: %found": {
         "prefix": "found",
         "body": [
@@ -462,33 +463,33 @@
             "endif;"
         ],
         "description": "It`s used to return '1' if the recent operation finds a relevant/matching record; yet it is not necessary that there will be exact match"
-    }
+    },
     "Built-in functions: %check": {
         "prefix": "check",
         "body": [
             "${1:Position} = %check(${2:Comparator}:${3:Base string}: ${4:Start position});",
         ],
         "description": "It`s used to find and return the position for non-occurrence of a character in a string from left"
-    }
+    },
     "Built-in functions: %checkr": {
         "prefix": "checkr",
         "body": [
             "${1:Position} = %checkr(${2:Comparator}:${3:Base string}: ${4:Start position});",
         ],
         "description": "It`s used to find and return the position for non-occurrence of a character in a string from right"
-    }
+    },
     "Built-in functions: Get %len": {
         "prefix": "len",
         "body": [
             "${1:Lenght} = %len(${2:Expression}:${3:*MAX(Optional)});",
         ],
         "description": "%len can be used to get the length of a variable expression or to get the maximum length of a varying-length expression"
-    }
+    },
     "Built-in functions: Set %len": {
         "prefix": "setLen",
         "body": [
             " %len(${1:Expression}) = ${2: New length};",
         ],
         "description": "%len can be used to set the length of a variable expression"
-    }
+    },
 }
