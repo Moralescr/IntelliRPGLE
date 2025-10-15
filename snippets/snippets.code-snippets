@@ -56,10 +56,10 @@
         "description": "Declare 'include'"
     },
     // Variables
-    "Variables: char, zoned, packed type": {
+    "Variables: char, packed, zoned, int, float, bindec, uns and varchar": {
         "prefix": "dcls",
         "body": [
-            "dcl-s ${1:name} ${3|char,packed,zoned,float,bindec,uns|}(${4:length}) inz(${5:*blanks});"
+            "dcl-s ${1:name} ${3|char,packed,zoned,int,float,bindec,uns,varchar|}(${4:length}) inz(${5:*blanks});"
         ],
         "description": "Declare variables (standalone field)"
     },
@@ -83,6 +83,13 @@
             "dcl-s ${1:name} timestamp;"
         ],
         "description": "Declare time type variable"
+    },
+    "Variables: like":{
+        "prefix": "dclike",
+        "body": [
+            "dcl-s ${1:name} like(${2:variable});"
+        ],
+        "description": "Declare variable with LIKE"
     },
     "Constant": {
         "prefix": "dclc",
@@ -265,6 +272,30 @@
             "endsl;"
         ],
         "description": "It's used to make a case statement so that only statements satisfying the condition will be executed"
+    },
+    "Operation codes: Select when-is":{
+        "prefix": "whenis",
+        "body": [
+            "select ${1:variable};",
+            "  when is ${2:value};",
+            "    ${3:// Code here}",
+            "  other;",
+            "    ${0:// Code here}",
+            "endsl;"
+        ],
+        "description": "Used to compare the given value is equal to a value or variable"
+    },
+    "Operation codes: Select when-in":{
+        "prefix": "whenin",
+        "body": [
+            "select ${1:variable};",
+            "  when in ${2:array};",
+            "    ${3:// Code here}",
+            "  other;",
+            "    ${0:// Code here}",
+            "endsl;"
+        ],
+        "description": "Used to compare the given value is in a list or values, array, or in a range"
     },
     "Operation codes: Random retrieval from a file": {
         "prefix": "chain",

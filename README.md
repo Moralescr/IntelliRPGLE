@@ -14,6 +14,7 @@ Follow this project at: https://github.com/Moralescr/IntelliRPGLE
 | dsext | Data structure: External file | dsdtaara | Data structure: "*DTAARA" definition |
 | dspsds | Data structure: "*PSDS" definition | dsind | Data structure: Indicators |
 | dclpi | Prototypes: Input parameters | dclpr | Prototypes: External programs |
+| dclike | Variable definition with like() |
 
 **`Supported opcodes, expressions and built-in functions(BIF)`**
 | Shortcut | Description | Shortcut | Description |
@@ -24,9 +25,10 @@ Follow this project at: https://github.com/Moralescr/IntelliRPGLE
 | mon | Operation code: "Monitor" | select | Operation code: "Select" |
 | chain |Operation code: Random retrieval from a file | setll |Operation code: Set lower limit |
 | setgt | Operation code: Set greater than definition | clear | Operation code: "Clear"|
+| whenin | Operation code: select when-in | whenis | Operation code: select when-is|
 | char | Built-in functions: %char() | int | Built-in functions: %int()|
 | uns | Built-in functions: %uns() | float | Built-in functions: %float()|
-| dec | Built-in functions: %dec() | int | Built-in functions: %date() |
+| dec | Built-in functions: %dec() | setLen | Built-in functions: Set %len() |
 | date | Built-in functions: %date() | time | Built-in functions: %time() |
 | timestmp | Built-in functions: %timestamp() | subst | Built-in functions: %subst() |
 | scan | Built-in functions: %scan() | diff | Built-in functions: %diff() |
@@ -38,7 +40,7 @@ Follow this project at: https://github.com/Moralescr/IntelliRPGLE
 | xlate | Built-in functions: %xlate() | eof | Built-in functions: %eof() |
 | equal | Built-in functions: %equal() | found | Built-in functions: %found() |
 | check | Built-in functions: %check() | checkr | Built-in functions: %checkr() |
-| setLen | Built-in functions: Set %len() | | |
+|  |  |  |  |
 
 > More snippets coming soon!
 
