@@ -40,13 +40,13 @@ Follow this project at: https://github.com/Moralescr/IntelliRPGLE
 | xlate | Built-in functions: %xlate() | eof | Built-in functions: %eof() |
 | equal | Built-in functions: %equal() | found | Built-in functions: %found() |
 | check | Built-in functions: %check() | checkr | Built-in functions: %checkr() |
-|  |  |  |  |
+| | | | |
 
 > More snippets coming soon!
 
 ## Release Notes
 
-### 0.1.0
+### 0.2.0
 
 Initial release
 
