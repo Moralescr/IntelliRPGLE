@@ -2,9 +2,8 @@
   "name": "intellirpgle",
   "displayName": "IntelliRPGLE",
   "description": "RPGLE extension for RPGLE language",
-  "version": "0.2.0",
+  "version": "0.4.0",
   "publisher": "moralescrDev",
-  "readme": "README.md",
   "icon": "icons/logo.png",
   "author": {
     "name": "Adrián Morales Guadamúz",
@@ -39,5 +38,5 @@
     "type": "git",
     "url": "https://github.com/Moralescr/IntelliRPGLE.git"
   },
-  "homepage": "https://github.com/Moralescr/IntelliRPGLE/blob/25cdaa3f99921259c8953f62782820b087482e68/README.md"
+  "homepage": "https://github.com/Moralescr/IntelliRPGLE/blob/main/README.md"
 }
