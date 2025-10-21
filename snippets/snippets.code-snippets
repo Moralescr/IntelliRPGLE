@@ -15,7 +15,7 @@
 
     More info in: https: //code.visualstudio.com/docs/editor/userdefinedsnippets
 */
-{
+{   
     // Files 
     "Files definition: Physical and logical files": {
         "prefix": "dclf",
@@ -177,9 +177,9 @@
     "Procedure: Structure": {
         "prefix": "dclproc",
         "body": [
-            "*-------------------------------------------------------------------*",
-            "* ${1:name}",
-            "*-------------------------------------------------------------------*",
+            "// --------------------------------------------------------------------",
+            "// ${1:name}",
+            "// --------------------------------------------------------------------",
             "dcl-proc $1;",
             "",
             "  dcl-pi $1;",
@@ -194,9 +194,9 @@
     "Operation codes: begsr": {
         "prefix": "sr",
         "body": [
-            "*-------------------------------------------------------------------*",
-            "* ${1:name}",
-            "*-------------------------------------------------------------------*",
+            "// --------------------------------------------------------------------",
+            "// ${1:name}",
+            "// --------------------------------------------------------------------",
             "begsr ${1:name};",
             "  ${0:// Code here}",
             "endsr;"
@@ -248,6 +248,15 @@
         ],
         "description": "for"
     },
+    "Operation codes: forEach": {
+		"prefix": "foreach",
+		"body": [
+			"for-each ${1:variable} in %list('':'');",
+			"  $0",
+			"endfor;"
+		],
+        "description": "The FOR-EACH operation begins a group of operations to process the items in the array, sub-array, or %LIST one at a time.",
+	},
     "Operation codes: monitor": {
         "prefix": "monitor",
         "body": [
@@ -391,6 +400,13 @@
         ],
         "description": "It's used to find the first position of the search argument in the source string"
     },
+    "Built-in functions: %scanrpl()": {
+        "prefix": "scanrpl",
+        "body": [
+            "${1:variable} = %scanrpl(${2:search argument}:${3:source string}:${4:start});"
+        ],
+        "description": "It's used to find the first position of the search argument in the source string"
+    },
     "Built-in functions: %diff()": {
         "prefix": "diff",
         "body": [
@@ -516,11 +532,11 @@
         ],
         "description": "%len can be used to get the length of a variable expression or to get the maximum length of a varying-length expression"
     },
-    "Built-in functions: Set %len": {
-        "prefix": "setLen",
+    "Built-in functions: %list": {
+        "prefix": "list",
         "body": [
-            " %len(${1:Expression}) = ${2: New length};",
+            "${1:array} = %list(${2:value1}:${3:value2}:${4:value3});",
         ],
-        "description": "%len can be used to set the length of a variable expression"
+        "description": "%list allows me to fill an array in one statement"
     },
 }
